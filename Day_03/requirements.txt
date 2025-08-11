@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+gtts
+pydantic
+jinja2      # For rendering HTML templates from backend

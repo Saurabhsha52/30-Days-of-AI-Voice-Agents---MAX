@@ -1,0 +1,14 @@
+# Day 1: Basic FastAPI + Voice Agent Setup
+fastapi
+uvicorn
+openai
+python-dotenv
+
+# Day 2: Adding TTS (Text-to-Speech) and Audio Handling
+gTTS
+pydub
+
+# Day 3: Frontend + WebSocket Integration
+jinja2
+websockets
+aiofiles

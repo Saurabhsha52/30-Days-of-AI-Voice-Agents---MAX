@@ -1,0 +1,58 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 3 — Text → Speech</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* small custom polish on top of tailwind */
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+    }
+    .accent-btn {
+      background: linear-gradient(90deg,#06b6d4,#3b82f6);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-6">
+  <div class="w-full max-w-2xl glass p-8 shadow-2xl">
+    <h1 class="text-3xl font-bold text-center mb-4">🎙️ AI Voice — Day 3</h1>
+
+    <div class="grid grid-cols-1 gap-4">
+      <label class="text-sm text-dark-blue-100">Enter text</label>
+      <textarea id="ttsText" rows="3" class="w-full p-3 rounded-lg bg-white bg-opacity-30 text-white placeholder-blue-200" placeholder="Type something you want read aloud..."></textarea>
+
+      <div class="flex gap-3">
+        <div class="flex-1">
+          <label class="text-sm text-blue-100">Choose voice</label>
+          <select id="voiceSelect" class="w-full p-2 rounded-lg bg-white bg-opacity-8 text-black"></select>
+        </div>
+        <div class="w-40 flex flex-col justify-end">
+          <button id="refreshVoices" class="py-2 px-3 rounded-lg text-white font-semibold border border-black/10 hover:bg-black/10 hover:opacity-90">Refresh</button>
+        </div>
+      </div>
+
+      <button id="genBtn" class="py-3 rounded-lg text-white font-bold accent-btn hover:opacity-95">Generate & Play</button>
+
+      <div id="status" class="text-sm text-yellow-200 min-h-[28px]"></div>
+      <pre id="rawResponse" class="text-xs text-red-200 whitespace-pre-wrap break-all max-h-40 overflow-auto"></pre>
+
+      <div id="playerWrap" class="hidden">
+        <h3 class="mt-2 text-sm font-semibold">Your audio</h3>
+        <audio id="audioElement" controls class="w-full mt-2"></audio>
+      </div>
+        <div id="errorWrap" class="hidden">
+            <h3 class="mt-2 text-sm font-semibold text-red-500">Error</h3>
+            <p id="errorMessage" class="text-xs text-red-300"></p>
+        </div>          
+    </div>
+  </div>
+
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+gtts        # Google Text-to-Speech for generating audio
+pydantic    # For request/response validation

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 TTS Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full">
+        <h1 class="text-2xl font-bold text-center mb-4">🎤 Text to Speech Generator</h1>
+        
+        <textarea 
+            id="ttsText" 
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+            placeholder="Enter text here...">
+        </textarea>
+        
+        <!-- Voice selection -->
+        <select id="voiceSelect" class="w-full p-2 border rounded mt-2"></select>
+        <button id="refreshVoices" class="mt-2 text-sm text-blue-600 underline">Refresh voices</button>
+        
+        <!-- Status and error display -->
+        <div id="status" class="mt-3 text-gray-600"></div>
+        <pre id="rawResponse" class="mt-2 text-sm text-red-600 whitespace-pre-wrap break-all"></pre>
+        
+        <!-- Generate button -->
+        <button 
+            onclick="generateAudio()" 
+            class="w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg">
+            Generate Audio
+        </button>
+        
+        <!-- Audio player -->
+        <div id="audioPlayer" class="mt-4 hidden">
+            <h2 class="text-lg font-semibold mb-2">Your Audio:</h2>
+            <audio controls id="audioElement" class="w-full"></audio>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
